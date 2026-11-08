@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Pesan Tiket | NadaRaya Fest{% endblock %}
+{% block content %}
+<section class="page-head"><p class="tag">BOOK YOUR PASS</p><h1>Form pemesanan demo</h1><p>Isi data untuk melihat alur redirect ke halaman konfirmasi.</p></section>
+<section class="paper form-paper">
+<form method="POST" action="{{ url_for('pesan') }}">
+  <label for="nama">Nama pemesan</label><input id="nama" name="nama" placeholder="Nama kamu" required>
+  <label for="jenis_tiket">Jenis tiket</label>
+  <select id="jenis_tiket" name="jenis_tiket">
+    <option>Early Bird</option><option>Regular Pass</option><option>Weekend Pass</option><option>VIP Experience</option>
+  </select>
+  <label for="jumlah">Jumlah tiket</label><input id="jumlah" name="jumlah" type="number" min="1" value="1" required>
+  <button class="button" type="submit">Lihat konfirmasi</button>
+</form>
+{% if error %}<div class="result bad">{{ error }}</div>{% endif %}
+<p class="note">Penting: form ini hanya simulasi pembelajaran. Tidak ada pembayaran atau tiket sungguhan.</p>
+</section>
+{% endblock %}

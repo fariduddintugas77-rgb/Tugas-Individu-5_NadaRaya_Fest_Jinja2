@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ item.nama }} | NadaRaya Fest{% endblock %}
+{% block content %}
+<section class="paper detail">
+  <p class="tag">TICKET DETAIL · {{ item.kategori | upper }}</p>
+  <h1>{{ item.nama | title }}</h1><p>{{ item.deskripsi }}</p>
+  <div class="price">Rp{{ "{:,}".format(item.harga).replace(",", ".") }}</div>
+  <p>Kuota contoh: {{ item.kuota }} tiket</p>
+  <a class="button" href="{{ url_for('pesan') }}">Lanjut ke pemesanan demo</a>
+  <a class="underlink" href="{{ url_for('tiket') }}">Kembali ke tiket</a>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}NadaRaya Fest | Beranda{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="tag">MUSIC · COMMUNITY · CULTURE</p>
+  <h1>Datang untuk musik.<br><em>Pulang membawa cerita.</em></h1>
+  <p class="lead">NadaRaya Fest adalah konsep festival musik lintas genre yang mempertemukan musisi, penikmat musik, dan energi kreatif dalam satu perayaan.</p>
+  <div class="actions"><a class="button" href="{{ url_for('tiket') }}">Lihat pilihan tiket</a><a class="button ghost" href="{{ url_for('tentang') }}">Kenali festival</a></div>
+  <div class="hero-note">Sebuah festival musik fiktif untuk project pembelajaran</div>
+</section>
+<section class="feature-row">
+  <div><span>01 / LIVE MUSIC</span><h2>Beragam panggung</h2><p>Jelajahi berbagai warna musik dari pop, rock, indie, hingga alternatif.</p></div>
+  <div><span>02 / GOOD PEOPLE</span><h2>Ruang untuk semua</h2><p>Tempat berkumpul, berbagi energi, dan menciptakan kenangan bersama.</p></div>
+  <div><span>03 / ONE RHYTHM</span><h2>Rayakan bersama</h2><p>Datang sebagai penonton, pulang sebagai bagian dari cerita.</p></div>
+</section>
+{% endblock %}

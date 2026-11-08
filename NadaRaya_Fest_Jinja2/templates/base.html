@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}NADARAYA FEST{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav wrap">
+    <a class="logo" href="{{ url_for('index') }}">NADA<span>RAYA</span><small>FESTIVAL</small></a>
+    <div class="links">
+      <a href="{{ url_for('index') }}">Beranda</a>
+      <a href="{{ url_for('tentang') }}">Tentang</a>
+      <a href="{{ url_for('tiket') }}">Tiket</a>
+      <a href="{{ url_for('kontak') }}">Info</a>
+      <a class="nav-cta" href="{{ url_for('pesan') }}">Pesan Tiket</a>
+    </div>
+  </nav>
+</header>
+<main class="wrap main">
+  {% block content %}{% endblock %}
+</main>
+<footer class="footer">
+  <div class="wrap foot-inner">
+    <div><strong>NADARAYA FEST</strong><p>Satu ruang, ribuan cerita, satu irama.</p></div>
+    <small>© 2026 NadaRaya Fest · Demo project pembelajaran Flask & Jinja2</small>
+  </div>
+</footer>
+</body>
+</html>

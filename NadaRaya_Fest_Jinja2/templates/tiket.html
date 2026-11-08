@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Pilihan Tiket | NadaRaya Fest{% endblock %}
+{% block content %}
+<section class="page-head"><p class="tag">CHOOSE YOUR EXPERIENCE</p><h1>Pilih tiketmu.</h1><p>Temukan jenis akses yang paling cocok untuk pengalaman festivalmu.</p></section>
+<div class="ticket-grid">
+{% for t in tiket %}
+  <article class="ticket-card">
+    <div class="ticket-top"><span>PASS 0{{ t.id }}</span><span>{{ t.kategori | upper }}</span></div>
+    <h2>{{ t.nama | title }}</h2><p>{{ t.deskripsi }}</p>
+    <div class="price">Rp{{ "{:,}".format(t.harga).replace(",", ".") }}</div>
+    <p class="quota">Kuota contoh: {{ t.kuota }} tiket</p>
+    <a class="underlink" href="{{ url_for('detail_tiket', id=t.id) }}">Detail tiket ↗</a>
+  </article>
+{% else %}
+  <p>Belum ada pilihan tiket.</p>
+{% endfor %}
+</div>
+<p class="count">Tersedia {{ tiket | length }} jenis tiket dalam katalog demo.</p>
+{% endblock %}

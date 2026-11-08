@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Cek Username | NadaRaya Fest{% endblock %}
+{% block content %}
+<section class="page-head"><p class="tag">ACCOUNT CHECK</p><h1>Cek username</h1><p>Gunakan form ini untuk mencoba conditional Jinja2.</p></section>
+<section class="paper form-paper">
+<form method="POST" action="{{ url_for('cek_username') }}">
+  <label for="username">Username pilihanmu</label>
+  <input id="username" name="username" value="{{ username }}" placeholder="Misal: penikmatmusik" required>
+  <button class="button" type="submit">Periksa username</button>
+</form>
+{% if hasil == "tidak_valid" %}
+  <div class="result bad"><b>Username tidak valid</b><br>Gunakan 4–20 karakter: huruf, angka, atau underscore.</div>
+{% elif hasil == "tersedia" %}
+  <div class="result good"><b>Username tersedia!</b><br>{{ username | title }} dapat digunakan pada demo ini.</div>
+{% elif hasil == "dipakai" %}
+  <div class="result warn"><b>Username sudah dipakai</b><br>Silakan coba nama lain.</div>
+{% endif %}
+<p class="note">Username yang dianggap sudah terdaftar pada data demo: raka, naya, admin.</p>
+</section>
+{% endblock %}

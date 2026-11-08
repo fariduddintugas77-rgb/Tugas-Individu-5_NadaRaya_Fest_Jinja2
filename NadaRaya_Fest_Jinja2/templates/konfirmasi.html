@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Konfirmasi Demo | NadaRaya Fest{% endblock %}
+{% block content %}
+<section class="paper detail">
+  <p class="tag">DEMO ORDER SUMMARY</p><h1>Terima kasih, {{ nama | title }}!</h1>
+  <p>Permintaan pemesanan demo berhasil diproses.</p>
+  <div class="summary"><p><b>Jenis tiket:</b> {{ jenis_tiket }}</p><p><b>Jumlah:</b> {{ jumlah }} tiket</p></div>
+  <p class="note">Ini bukan bukti pembelian dan tidak berlaku sebagai tiket masuk acara.</p>
+  <a class="button" href="{{ url_for('index') }}">Kembali ke beranda</a>
+</section>
+{% endblock %}
